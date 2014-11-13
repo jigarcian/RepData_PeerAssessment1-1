@@ -1,13 +1,4 @@
----
-title: "Assignment 1 Reproducible Researc"
-author: "Jorge Garcia"
-date: "Thursday, November 13, 2014"
-output: html_document
----
 
-
-
-```{r}
 
 
 #Load the data (note that the data is already archived in the repository).
@@ -47,7 +38,7 @@ median(stepsByDate$steps)
 
 # 2-What is the average daily activity pattern?
 
-#Make a time series plot (i.e. type = "1") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
+#Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 stepsByInterval <- aggregate(steps ~ interval, data=completeDF, FUN=mean)
 plot(stepsByInterval, type="l")
@@ -126,9 +117,3 @@ xyplot(steps~interval|weekPart,
     type="l",
     layout=c(1,2)
 )
-
-```{r, echo= TRUE}
-
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
